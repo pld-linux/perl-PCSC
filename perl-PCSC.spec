@@ -7,6 +7,7 @@ Release:	3
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.gz
+# Source0-md5:	f5188e0c73d43b4aaf1a0d920278776e
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl.html
 BuildRequires:	pcsc-lite-devel	
 # it's dlopened, so not autodetected
