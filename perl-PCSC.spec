@@ -3,10 +3,11 @@ Summary:	Perl interface to the PC/SC smart card library
 Summary(pl):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
 Version:	1.1.3
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.gz
+# Source0-md5:	f5188e0c73d43b4aaf1a0d920278776e
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl.html
 BuildRequires:	pcsc-lite-devel
 # it's dlopened, so not autodetected
@@ -32,7 +33,8 @@ wielu ró¿nych czytników kart Smart.
 %setup -q -n pcsc-perl-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 
 %{__make} \
 	DEFINE="-Wall" \
@@ -53,12 +55,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changelog README
-%{perl_sitearch}/PCSC.pm
-%dir %{perl_sitearch}/PCSC
-%{perl_sitearch}/PCSC/Card.pm
-%dir %{perl_sitearch}/auto/PCSC
-%{perl_sitearch}/auto/PCSC/PCSC.bs
-%attr(755,root,root) %{perl_sitearch}/auto/PCSC/PCSC.so
+%{perl_vendorarch}/PCSC.pm
+%dir %{perl_vendorarch}/PCSC
+%{perl_vendorarch}/PCSC/Card.pm
+%dir %{perl_vendorarch}/auto/PCSC
+%{perl_vendorarch}/auto/PCSC/PCSC.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/PCSC/PCSC.so
 %{_mandir}/man3/*.3*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
