@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changelog README
-%{perl_vendorarch}/Chipcard
+%dir %{perl_vendorarch}/Chipcard
 %{perl_vendorarch}/Chipcard/PCSC.pm
 %dir %{perl_vendorarch}/Chipcard/PCSC
 %{perl_vendorarch}/Chipcard/PCSC/Card.pm
