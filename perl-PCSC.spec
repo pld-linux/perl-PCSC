@@ -14,6 +14,8 @@ Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version
 # Source0-md5:	4c1869b5b726f7ab5b1bda88b390c821
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 BuildRequires:	pcsc-lite-devel
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov
 # it's dlopened, so not autodetected
 Requires:	pcsc-lite-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
