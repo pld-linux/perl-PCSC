@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Perl interface to the PC/SC smart card library
