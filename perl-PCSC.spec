@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Perl interface to the PC/SC smart card library
-Summary(pl):	Perlowy interfejs do biblioteki PC/SC
+Summary(pl):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
 Version:	1.1.3
 Release:	2
