@@ -3,6 +3,8 @@
 %bcond_with	tests	# perform "make test" (requires running pcscd)
 #
 %include	/usr/lib/rpm/macros.perl
+%define	pdir	Chipcard
+%define	pnam	PCSC
 Summary:	Perl interface to the PC/SC smart card library
 Summary(pl):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
@@ -56,6 +58,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	DESTDIR=$RPM_BUILD_ROOT
 
 install examples/* test/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Chipcard/{PCSC.pod,PCSC/Card.pod}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
