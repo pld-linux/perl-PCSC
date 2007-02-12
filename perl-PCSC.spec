@@ -6,7 +6,7 @@
 %define	pdir	Chipcard
 %define	pnam	PCSC
 Summary:	Perl interface to the PC/SC smart card library
-Summary(pl):	Interfejs perlowy do biblioteki PC/SC
+Summary(pl.UTF-8):   Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
 Version:	1.4.4
 Release:	1
@@ -29,13 +29,13 @@ the PCSC-lite daemon (pcscd(1)). PC/SC represents an abstraction layer
 to smartcard readers. It provides a communication layer with a wide
 variety of smart card readers through a standardized API.
 
-%description -l pl
-Modu³ PCSC zawiera implementacjê klasy PCSC, perlowego interfejsu do
-biblioteki PC/SC obs³uguj±cej czytniki kart Smart. Obiekty tej klasy
-s³u¿± do komunikacji z demonem PCSC (pcscd(1)). Biblioteka PC/SC
-stanowi abstrakcyjn± warstwê dla czytników kart Smart. Udostêpnia ona,
-za po¶rednictwem zestandaryzowanego API, warstwê komunikacyjn± dla
-wielu ró¿nych czytników kart Smart.
+%description -l pl.UTF-8
+ModuÅ‚ PCSC zawiera implementacjÄ™ klasy PCSC, perlowego interfejsu do
+biblioteki PC/SC obsÅ‚ugujÄ…cej czytniki kart Smart. Obiekty tej klasy
+sÅ‚uÅ¼Ä… do komunikacji z demonem PCSC (pcscd(1)). Biblioteka PC/SC
+stanowi abstrakcyjnÄ… warstwÄ™ dla czytnikÃ³w kart Smart. UdostÄ™pnia ona,
+za poÅ›rednictwem zestandaryzowanego API, warstwÄ™ komunikacyjnÄ… dla
+wielu rÃ³Å¼nych czytnikÃ³w kart Smart.
 
 %prep
 %setup -q -n pcsc-perl-%{version}
