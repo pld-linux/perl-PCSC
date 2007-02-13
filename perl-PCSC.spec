@@ -6,7 +6,7 @@
 %define	pdir	Chipcard
 %define	pnam	PCSC
 Summary:	Perl interface to the PC/SC smart card library
-Summary(pl.UTF-8):   Interfejs perlowy do biblioteki PC/SC
+Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
 Version:	1.4.4
 Release:	1
