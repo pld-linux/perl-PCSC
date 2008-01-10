@@ -45,6 +45,7 @@ wielu różnych czytników kart Smart.
 	INSTALLDIRS=vendor
 
 %{__make} \
+	CC="%{__cc}" \
 	DEFINE="-Wall" \
 	OPTIMIZE="%{rpmcflags}"
 
