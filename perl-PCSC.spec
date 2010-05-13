@@ -17,6 +17,7 @@ Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 BuildRequires:	pcsc-lite-devel >= 1.2.9
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
 # it's dlopened, so not autodetected
 Requires:	pcsc-lite-libs >= 1.2.9
