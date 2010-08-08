@@ -8,19 +8,20 @@
 Summary:	Perl interface to the PC/SC smart card library
 Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
-Version:	1.4.8
-Release:	2
+Version:	1.4.9
+Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.gz
-# Source0-md5:	ac842975d904e0acde36d4796ec19ef1
+# Source0-md5:	61f10eb53a349b05d11dfd18e6b5a0dd
+Patch0:		%{name}-update.patch
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
-BuildRequires:	pcsc-lite-devel >= 1.2.9
+BuildRequires:	pcsc-lite-devel >= 1.6.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
 # it's dlopened, so not autodetected
-Requires:	pcsc-lite-libs >= 1.2.9
+Requires:	pcsc-lite-libs >= 1.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,6 +41,7 @@ wielu różnych czytników kart Smart.
 
 %prep
 %setup -q -n pcsc-perl-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \

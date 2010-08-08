@@ -1,0 +1,31 @@
+--- pcsc-perl-1.4.9/PCSC.xs.orig	2010-06-30 14:53:47.000000000 +0200
++++ pcsc-perl-1.4.9/PCSC.xs	2010-08-08 19:41:49.894821619 +0200
+@@ -1050,7 +1050,7 @@ _GetStatusChange (hContext, dwTimeout, p
+ 	unsigned long dwTimeout;
+ 	SV*           psvReaderStates;
+ 	PREINIT:
+-		static SCARD_READERSTATE_A *rgReaderStates_t = NULL;
++		static SCARD_READERSTATE   *rgReaderStates_t = NULL;
+ 		unsigned int               nCount = 0;
+ 		unsigned int               nATRCount = 0;
+ 		unsigned int               nReaders = 0;
+@@ -1082,7 +1082,7 @@ _GetStatusChange (hContext, dwTimeout, p
+ 			Safefree(rgReaderStates_t);
+ 
+ 		/* allocate the Reader States table */
+-		Newz(2018, rgReaderStates_t, nReaders, SCARD_READERSTATE_A);
++		Newz(2018, rgReaderStates_t, nReaders, SCARD_READERSTATE);
+ 		if (rgReaderStates_t == NULL)
+ 		{
+ 			warn ("Could not allocate buffer at %s line %d\n\t",
+--- pcsc-perl-1.4.9/PCSCperl.h.orig	2008-03-12 11:35:19.000000000 +0100
++++ pcsc-perl-1.4.9/PCSCperl.h	2010-08-08 19:42:14.578816591 +0200
+@@ -151,7 +151,7 @@ typedef LONG (WINAPI *TSCardEndTransacti
+ typedef LONG (WINAPI *TSCardTransmit)         ( SCARDHANDLE, LPCSCARD_IO_REQUEST, LPCBYTE, DWORD, LPSCARD_IO_REQUEST, LPBYTE, LPDWORD ); 
+ typedef LONG (WINAPI *TSCardControl)          ( SCARDHANDLE, DWORD, LPCBYTE, DWORD, LPBYTE, DWORD, LPDWORD );
+ typedef LONG (WINAPI *TSCardStatus)           ( SCARDHANDLE, LPTSTR, LPDWORD, LPDWORD, LPDWORD, LPBYTE, LPDWORD );
+-typedef LONG (WINAPI *TSCardGetStatusChange)  ( SCARDHANDLE, DWORD, LPSCARD_READERSTATE_A, DWORD );
++typedef LONG (WINAPI *TSCardGetStatusChange)  ( SCARDHANDLE, DWORD, SCARD_READERSTATE*, DWORD );
+ typedef LONG (WINAPI *TSCardCancel)           ( SCARDCONTEXT );
+ typedef LONG (*TSCardSetTimeout)       ( SCARDCONTEXT, DWORD );
+ 
