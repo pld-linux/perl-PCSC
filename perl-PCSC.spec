@@ -8,13 +8,12 @@
 Summary:	Perl interface to the PC/SC smart card library
 Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
-Version:	1.4.9
+Version:	1.4.11
 Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
-Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.gz
-# Source0-md5:	61f10eb53a349b05d11dfd18e6b5a0dd
-Patch0:		%{name}-update.patch
+Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.bz2
+# Source0-md5:	40abf259b6df83224eb73c8c8c5179bf
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 BuildRequires:	pcsc-lite-devel >= 1.6.0
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -41,7 +40,6 @@ wielu różnych czytników kart Smart.
 
 %prep
 %setup -q -n pcsc-perl-%{version}
-%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -78,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Chipcard/PCSC
 %{perl_vendorarch}/auto/Chipcard/PCSC/PCSC.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Chipcard/PCSC/PCSC.so
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/Chipcard::PCSC*.3pm*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*.pl
 %{_examplesdir}/%{name}-%{version}/gsm.script
