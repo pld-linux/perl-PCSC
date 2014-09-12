@@ -74,7 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Chipcard/PCSC/Card.pm
 %dir %{perl_vendorarch}/auto/Chipcard
 %dir %{perl_vendorarch}/auto/Chipcard/PCSC
-%{perl_vendorarch}/auto/Chipcard/PCSC/PCSC.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Chipcard/PCSC/PCSC.so
 %{_mandir}/man3/Chipcard::PCSC*.3pm*
 %dir %{_examplesdir}/%{name}-%{version}
