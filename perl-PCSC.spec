@@ -8,12 +8,12 @@
 Summary:	Perl interface to the PC/SC smart card library
 Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
-Version:	1.4.13
-Release:	5
+Version:	1.4.14
+Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.bz2
-# Source0-md5:	758ca469b79667fa8c41422df86a088b
+# Source0-md5:	45601505dbb7b27329811ac9bad35fab
 URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 BuildRequires:	pcsc-lite-devel >= 1.6.0
 BuildRequires:	perl-devel >= 1:5.8.0
