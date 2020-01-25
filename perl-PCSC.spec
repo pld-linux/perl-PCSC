@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires running pcscd)
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Chipcard
 %define	pnam	PCSC
 Summary:	Perl interface to the PC/SC smart card library
