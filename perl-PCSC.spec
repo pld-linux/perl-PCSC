@@ -18,6 +18,7 @@ BuildRequires:	pcsc-lite-devel >= 1.6.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(macros) >= 1.745
 # it's dlopened, so not autodetected
 Requires:	pcsc-lite-libs >= 1.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
