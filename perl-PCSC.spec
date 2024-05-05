@@ -1,3 +1,4 @@
+# TODO: rename to perl-Chipcard-PCSC?
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires running pcscd)
@@ -7,13 +8,13 @@
 Summary:	Perl interface to the PC/SC smart card library
 Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
-Version:	1.4.14
-Release:	10
+Version:	1.4.16
+Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
-Source0:	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/pcsc-perl-%{version}.tar.bz2
-# Source0-md5:	45601505dbb7b27329811ac9bad35fab
-URL:		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
+Source0:	https://pcsc-perl.apdu.fr/Chipcard-PCSC-v%{version}.tar.gz
+# Source0-md5:	51f77496146132ed159d319ea14e5565
+URL:		https://pcsc-perl.apdu.fr/
 BuildRequires:	pcsc-lite-devel >= 1.6.0
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
@@ -39,7 +40,7 @@ za pośrednictwem zestandaryzowanego API, warstwę komunikacyjną dla
 wielu różnych czytników kart Smart.
 
 %prep
-%setup -q -n pcsc-perl-%{version}
+%setup -q -n Chipcard-PCSC-v%{version}
 
 %build
 %{__perl} Makefile.PL \
@@ -60,7 +61,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	DESTDIR=$RPM_BUILD_ROOT
 
 install examples/* test/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Chipcard/{PCSC.pod,PCSC/Card.pod}
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Chipcard/{PCSC.pod,PCSC/Card.pod}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
