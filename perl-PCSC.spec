@@ -9,7 +9,7 @@ Summary:	Perl interface to the PC/SC smart card library
 Summary(pl.UTF-8):	Interfejs perlowy do biblioteki PC/SC
 Name:		perl-PCSC
 Version:	1.4.16
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	https://pcsc-perl.apdu.fr/Chipcard-PCSC-v%{version}.tar.gz
